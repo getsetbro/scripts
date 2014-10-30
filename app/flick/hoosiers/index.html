@@ -1,0 +1,22 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+    $.getJSON('hoosiers_script.json', function(data) {
+'use strict';
+        var items = [];
+        $.each(data, function(key, val) {
+            items.push('<li id="' + key + '">' + val + '</li>');
+        });
+
+        $('<ol/>', {
+            class: 'my-new-list',
+            html: items.join('')
+        }).appendTo('body');
+    });
+    </script></body>
+</html>
